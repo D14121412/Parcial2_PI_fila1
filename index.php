@@ -19,7 +19,7 @@ while($libros = mysqli_fetch_array($result)) {
      echo "<td>" . $libros[3] . "</td>";
      echo "<td>" . $libros[4] . "</td>";
      echo "<td>" . $libros[5] . "</td>";
-     echo "<td><a href=''>Modificar</a></td>";
+     echo "<td><a href='http://localhost/programacion1/Parcial2_PI_fila1_Barbozadaira/modificar/modificar.php?id=" . $libros["id"] . "'>Modificar</a></td>";
      echo "<td><a href=''>Eliminar</a></td></tr>";
 
 }
