@@ -26,5 +26,6 @@ while($libros = mysqli_fetch_array($result)) {
 
 echo "</table>";
 echo "<button><a href='insertar/nuevo.php'>Agregar nuevo libro</a></button>";
+echo "<a href='login/inicio_sesion.php'>Cerrar sesión</a>"
 
 ?>  
