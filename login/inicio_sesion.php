@@ -14,7 +14,7 @@
         <input type="password" name="contrasenia" required>
         <br>
         <button type="submit">Ingresar</button>
-        <a href="singup.php">Crear cuenta</a>
+        <a href="nuevo_usuario.php">Crear cuenta</a>
     </form>
 </body>
 </html>
