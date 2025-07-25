@@ -1,5 +1,6 @@
 <?php
 
+//tabla libros
 $titulo = $_POST["titulo"];
 $autor = $_POST["autor"];
 $anio = $_POST["anio"];

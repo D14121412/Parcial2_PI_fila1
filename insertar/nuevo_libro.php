@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Agregar nuevo libro</h2>
-    <form action="insert.php" method="post">
+    <form action="insert_libros.php" method="post">
         <label for="">Titulo</label>
         <input type="text" name="titulo">
         <br>

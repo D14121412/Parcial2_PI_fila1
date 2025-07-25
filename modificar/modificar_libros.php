@@ -19,7 +19,7 @@
 
     ?>
     <h2>Modificar</h2>
-    <form action="update.php" method="post">
+    <form action="update_libro.php" method="post">
         <label for="">Titulo</label>
         <input type="text" name="titulo" value = "<?php echo $datos['titulo']; ?>">
         <br>
@@ -43,5 +43,6 @@
         <button>Guardar</button>
         <button><a href='../index.php'>Cancelar</a></button>
         <input type="hidden" name ="id" value = "<?php echo $datos['id']; ?>">
+    </form>
 </body>
 </html>

@@ -11,9 +11,5 @@ if ($mysqli ->connect_errno) {
     echo "No se puede realizar la conexion: (" . $mysqli->connect_errno;
 }
 
-$consulta = "SELECT * FROM libros";
-
-$result = $mysqli->query($consulta);
-
 
 ?>
