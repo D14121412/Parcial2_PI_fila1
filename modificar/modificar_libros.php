@@ -1,48 +1,67 @@
- <!DOCTYPE html>
-<html lang="en">
+<?php
+$id = $_GET['id'];
+
+require '../conexion.php';
+
+$consulta = "SELECT * FROM libros WHERE id = $id";
+$result = $mysqli->query($consulta);
+$datos = mysqli_fetch_assoc($result);
+?>
+
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modificar Libro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <?php
-    $id = $_GET['id'];
+<body class="bg-light">
 
-    require '../conexion.php';
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow p-4" style="width: 100%; max-width: 500px;">
+        <h2 class="text-center mb-4">Modificar Libro</h2>
+        <form action="update_libro.php" method="POST">
 
-    $consulta = "SELECT * FROM libros WHERE id = $id";
+            <div class="mb-3">
+                <label class="form-label">Título</label>
+                <input type="text" name="titulo" class="form-control" value="<?php echo $datos['titulo']; ?>" required>
+            </div>
 
-    $result = $mysqli->query($consulta);
+            <div class="mb-3">
+                <label class="form-label">Autor</label>
+                <input type="text" name="autor" class="form-control" value="<?php echo $datos['autor']; ?>" required>
+            </div>
 
-    $datos = mysqli_fetch_assoc($result);
+            <div class="mb-3">
+                <label class="form-label">Año</label>
+                <input type="number" name="anio" class="form-control" value="<?php echo $datos['anio']; ?>" required>
+            </div>
 
-    ?>
-    <h2>Modificar</h2>
-    <form action="update_libro.php" method="post">
-        <label for="">Titulo</label>
-        <input type="text" name="titulo" value = "<?php echo $datos['titulo']; ?>">
-        <br>
-        <label for="">Autor</label>
-        <input type="text" name="autor" value = "<?php echo $datos['autor']; ?>">
-        <br>
-        <label for="">Año</label>
-        <input type="text" name="anio" value = "<?php echo $datos['anio']; ?>">
-        <br>
-        <label for="">Categoria</label>
-        <select name="categoria_id" id="" value = "<?php echo $datos['categoria_id']; ?>">
-            <option value="1">Ficcion</option>
-            <option value="2">No ficcion</option>
-            <option value="3">Ciencia</option>
-            <option value="4">Historia</option>
-        </select>
-        <br>
-        <label for="">Stock</label>
-        <input type="text" name="stock" value = "<?php echo $datos['stock']; ?>">
-        <br>
-        <button>Guardar</button>
-        <button><a href='../index.php'>Cancelar</a></button>
-        <input type="hidden" name ="id" value = "<?php echo $datos['id']; ?>">
-    </form>
+            <div class="mb-3">
+                <label class="form-label">Categoría</label>
+                <select name="categoria_id" class="form-select" required>
+                    <option value="1" <?php if($datos['categoria_id'] == 1) echo 'selected'; ?>>Ficción</option>
+                    <option value="2" <?php if($datos['categoria_id'] == 2) echo 'selected'; ?>>No Ficción</option>
+                    <option value="3" <?php if($datos['categoria_id'] == 3) echo 'selected'; ?>>Ciencia</option>
+                    <option value="4" <?php if($datos['categoria_id'] == 4) echo 'selected'; ?>>Historia</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Stock</label>
+                <input type="number" name="stock" class="form-control" value="<?php echo $datos['stock']; ?>" required>
+            </div>
+
+            <input type="hidden" name="id" value="<?php echo $datos['id']; ?>">
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="../index.php" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
