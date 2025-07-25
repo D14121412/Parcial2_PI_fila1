@@ -1,6 +1,5 @@
 <?php
 
-//tabla prestamos
 $libro_id = $_POST["libro_id"];
 $usuario_id= $_POST["usuario_id"];
 $fecha_prestamo = $_POST["fecha_prestamo"];
