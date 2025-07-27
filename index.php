@@ -24,7 +24,7 @@ $resultVista = $mysqli->query($consultaVista);
 <body class="bg-light">
 <div class="container mt-5">
 
-    <h2 class="mb-4 text-primary">📖 Listado desde Vista: Préstamos con Nombres</h2>
+    <h2 class="mb-4 text-primary">Listado desde Vista: Préstamos</h2>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
@@ -49,7 +49,7 @@ $resultVista = $mysqli->query($consultaVista);
     </table>
     <br><br>
 
-    <h2 class="mb-3">📋 Listado de Préstamos (IDs)</h2>
+    <h2 class="mb-3">Listado de Préstamos (IDs)</h2>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
@@ -76,7 +76,7 @@ $resultVista = $mysqli->query($consultaVista);
     <a href="insertar/nuevo_prestamo.php" class="btn btn-success mb-4">Agregar nuevo préstamo</a>
     <br><br>
 
-    <h2 class="mb-3">👤 Listado de Usuarios</h2>
+    <h2 class="mb-3">Listado de Usuarios</h2>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>
@@ -97,7 +97,7 @@ $resultVista = $mysqli->query($consultaVista);
     </table>
     <br><br>
 
-    <h2 class="mb-3">📚 Listado de Libros</h2>
+    <h2 class="mb-3">Listado de Libros</h2>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>

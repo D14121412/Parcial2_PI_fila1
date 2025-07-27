@@ -1,7 +1,12 @@
 <?php
+// Conexión a la base de datos
 require '../conexion.php';
 
+
+// Obtener lista de libros (solo id y título)
 $libros = $mysqli->query("SELECT id, titulo FROM libros");
+
+// Obtener lista de usuarios (solo id y nombre de usuario)
 $usuarios = $mysqli->query("SELECT id, nombre_usuario FROM usuarios");
 ?>
 
@@ -11,6 +16,8 @@ $usuarios = $mysqli->query("SELECT id, nombre_usuario FROM usuarios");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Préstamo</title>
+
+    <!-- Bootstrap para estilos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -19,7 +26,10 @@ $usuarios = $mysqli->query("SELECT id, nombre_usuario FROM usuarios");
     <div class="card shadow p-4" style="width: 100%; max-width: 500px;">
         <h2 class="text-center mb-4">Registrar Préstamo</h2>
 
+        <!-- Formulario para insertar nuevo préstamo -->
         <form action="insert_prestamos.php" method="POST">
+
+            <!-- Selección de libro -->
             <div class="mb-3">
                 <label for="libro_id" class="form-label">Libro</label>
                 <select name="libro_id" class="form-select" required>
@@ -29,7 +39,8 @@ $usuarios = $mysqli->query("SELECT id, nombre_usuario FROM usuarios");
                     <?php } ?>
                 </select>
             </div>
-
+            
+            <!-- Selección de usuario -->
             <div class="mb-3">
                 <label for="usuario_id" class="form-label">Usuario</label>
                 <select name="usuario_id" class="form-select" required>
@@ -40,16 +51,19 @@ $usuarios = $mysqli->query("SELECT id, nombre_usuario FROM usuarios");
                 </select>
             </div>
 
+            <!-- Campo para ingresar fecha de préstamo -->
             <div class="mb-3">
                 <label for="fecha_prestamo" class="form-label">Fecha de Préstamo</label>
                 <input type="date" name="fecha_prestamo" class="form-control" required>
             </div>
 
+            <!-- Campo para ingresar fecha de devolución -->
             <div class="mb-3">
                 <label for="fecha_devolucion" class="form-label">Fecha de Devolución</label>
                 <input type="date" name="fecha_devolucion" class="form-control" required>
             </div>
 
+            <!-- Botones para enviar o cancelar -->
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-success">Guardar</button>
                 <a href="../index.php" class="btn btn-secondary">Cancelar</a>

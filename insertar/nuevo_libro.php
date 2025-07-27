@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Agregar nuevo libro</title>
+
+      <!-- Bootstrap para estilos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body class="bg-light">
@@ -13,21 +15,25 @@
         <h2 class="text-center mb-4">Agregar nuevo libro</h2>
         <form action="insert_libros.php" method="post">
 
+            <!-- Campo para título -->
             <div class="mb-3">
                 <label class="form-label" for="titulo">Título</label>
                 <input type="text" id="titulo" name="titulo" class="form-control" required />
             </div>
 
+            <!-- Campo para autor -->
             <div class="mb-3">
                 <label class="form-label" for="autor">Autor</label>
                 <input type="text" id="autor" name="autor" class="form-control" required />
             </div>
 
+            <!-- Campo para año -->
             <div class="mb-3">
                 <label class="form-label" for="anio">Año</label>
                 <input type="number" id="anio" name="anio" class="form-control" required />
             </div>
 
+            <!-- Selección de categoría -->
             <div class="mb-3">
                 <label class="form-label" for="categoria_id">Categoría</label>
                 <select id="categoria_id" name="categoria_id" class="form-select" required>
@@ -38,12 +44,14 @@
                     <option value="4">Historia</option>
                 </select>
             </div>
-
+            
+            <!-- Campo para stock -->
             <div class="mb-3">
                 <label class="form-label" for="stock">Stock</label>
                 <input type="number" id="stock" name="stock" class="form-control" required min="0" />
             </div>
-
+            
+            <!-- Botones guardar y cancelar -->
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-success">Guardar</button>
                 <a href="../index.php" class="btn btn-secondary">Cancelar</a>
