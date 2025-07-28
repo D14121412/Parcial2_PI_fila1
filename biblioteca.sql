@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2025 a las 23:20:46
+-- Tiempo de generación: 28-07-2025 a las 04:19:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -64,7 +64,7 @@ CREATE TABLE `libros` (
 INSERT INTO `libros` (`id`, `titulo`, `autor`, `anio`, `categoria_id`, `stock`) VALUES
 (1, 'Cien Años de Soledad', 'Gabriel García Márquez', 1967, 1, 3),
 (2, 'Breve historia del tiempo', 'Stephen Hawking', 1988, 3, 3),
-(3, 'El origen de las especies', 'Charles Darwin', 1859, 1, 4),
+(3, 'El origen de las especies', 'Charles Darwin', 1859, 3, 9),
 (4, 'Percy Jackson y el ladrón del rayo', 'Rick Riordan', 2005, 1, 5),
 (10, 'El sistema de autosalvación del Villano Escoria', 'Mo Xiang Tong Xiu', 2014, 1, 5);
 
@@ -88,8 +88,9 @@ CREATE TABLE `prestamos` (
 
 INSERT INTO `prestamos` (`id`, `libro_id`, `usuario_id`, `fecha_prestamo`, `fecha_devolucion`) VALUES
 (1, 1, 1, '2025-07-01', '2025-07-15'),
-(2, 1, 2, '2025-07-16', NULL),
-(3, 2, 2, '2025-07-05', '2025-07-10');
+(2, 2, 2, '2025-07-16', '2025-08-09'),
+(9, 4, 1, '2025-07-18', '2025-07-31'),
+(10, 3, 7, '2025-07-26', '2025-09-19');
 
 -- --------------------------------------------------------
 
@@ -110,8 +111,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nombre_usuario`, `contrasenia`) VALUES
 (1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055'),
 (2, 'juan', '123456'),
-(7, 'gabriela', 'gabiela123'),
-(10, 'laura', '1234567');
+(7, 'gabriela', 'gabiela123');
 
 -- --------------------------------------------------------
 
@@ -182,13 +182,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamos`
 --
 ALTER TABLE `prestamos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

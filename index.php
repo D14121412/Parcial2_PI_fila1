@@ -5,7 +5,10 @@ require 'conexion.php';
 $consultaLibros = "SELECT * FROM libros";
 $consultaPrestamos = "SELECT * FROM prestamos";
 $consultaUsuarios = "SELECT * FROM usuarios";
-$consultaVista = "SELECT * FROM vista_prestamos";
+$consultaVista = "SELECT p.id, l.titulo AS libro, u.nombre_usuario AS usuario, p.fecha_prestamo, p.fecha_devolucion
+                  FROM prestamos p
+                  JOIN libros l ON p.libro_id = l.id
+                  JOIN usuarios u ON p.usuario_id = u.id";
 
 // Resultados
 $resultLibros = $mysqli->query($consultaLibros);
@@ -13,6 +16,7 @@ $resultPrestamos = $mysqli->query($consultaPrestamos);
 $resultUsuarios = $mysqli->query($consultaUsuarios);
 $resultVista = $mysqli->query($consultaVista);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -129,6 +133,7 @@ $resultVista = $mysqli->query($consultaVista);
     <a href="insertar/nuevo_libro.php" class="btn btn-success mb-3">Agregar nuevo libro</a>
     <br>
     <a href="login/inicio_sesion.php" class="btn btn-secondary">Cerrar sesión</a>
+    <br>
 
 </div>
 </body>
