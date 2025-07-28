@@ -17,6 +17,6 @@ $result = $mysqli->query($insert);
 // Mostrar mensaje de éxito y redirigir al login
 echo "<script>
     alert('Usuario registrado correctamente');
-    window.location = 'login.php';
+    window.location = '../index.php';
 </script>";
 ?>
